@@ -1,0 +1,127 @@
+<!-- File: index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Price Generator</title>
+  <link rel="stylesheet" href="styles/userstyles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Price Generator</h1>
+    
+    <!-- Sales Options Section -->
+    <div id="optionsSection">
+      <h3>Select Sales Options</h3>
+      <form id="salesForm">
+        <table id="salesOptionsTable">
+          <thead>
+            <tr>
+              <th>Select</th>
+              <th>Option Number</th>
+              <th>Name</th>
+              <th>Selling Price (售價)</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Sales options will be dynamically loaded here -->
+          </tbody>
+        </table>
+      </form>
+    </div>
+    
+    <!-- Generate Price Button -->
+    <div id="inputSection">
+      <button onclick="generateFinalPrice()" class="spin-btn">Generate Price</button>
+    </div>
+    
+    <!-- Animation Section -->
+    <div id="animationSection" class="animation-section" style="display: none;">
+      <h3>Choosing Multiplier...</h3>
+      <div class="multipliers-animation">
+        <div id="multipliersList" class="multipliers-list">
+          <!-- Multipliers will be dynamically loaded here for animation -->
+        </div>
+        <div id="highlight" class="highlight"></div>
+      </div>
+    </div>
+    
+    <!-- Result Section -->
+    <div id="resultSection" class="result-section" style="display: none;">
+      <h3>Amount to Pay:</h3>
+      <p><strong>Total Final Price:</strong> $<span id="totalFinalPrice"></span></p>
+    </div>
+    
+    <!-- Admin Modal -->
+    <div id="adminModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeAdminModal()">&times;</span>
+        
+        <!-- Login Section -->
+        <div id="loginSection">
+          <h3>Admin Login</h3>
+          <input type="password" id="adminPassword" placeholder="Enter Admin Password" />
+          <button onclick="validateAdmin()" class="admin-btn">Login</button>
+          <p id="adminError" class="error-message" style="display: none;">Invalid password. Please try again.</p>
+        </div>
+        
+        <!-- Settings Section -->
+        <div id="settingsSection" style="display: none;">
+          <h3>Configure Multipliers and Probabilities</h3>
+          
+          <!-- Multipliers Table -->
+          <table id="multipliersTable" class="multipliers-table">
+            <thead>
+              <tr>
+                <th>Multiplier</th>
+                <th>Probability (%)</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Multipliers will be dynamically loaded here -->
+            </tbody>
+          </table>
+          
+          <!-- Add Row Button -->
+          <button onclick="addMultiplierRow()" class="admin-btn">Add Multiplier</button>
+          
+          <!-- Save Multipliers Button -->
+          <button onclick="saveMultipliers()" class="admin-btn">Save Multipliers</button>
+          
+          <h3>Configure Sales Options</h3>
+          
+          <!-- Sales Options Table -->
+          <table id="salesOptionsTableAdmin" class="sales-options-table">
+            <thead>
+              <tr>
+                <th>Number</th>
+                <th>Name</th>
+                <th>Cost (成本)</th>
+                <th>Selling Price (售價)</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Sales options will be dynamically loaded here -->
+            </tbody>
+          </table>
+          
+          <!-- Add Row Button -->
+          <button onclick="addSalesOptionRowAdmin()" class="admin-btn">Add Sales Option</button>
+          
+          <!-- Save Sales Options Button -->
+          <button onclick="saveSalesOptions()" class="admin-btn">Save Sales Options</button>
+          
+          <!-- Success Message -->
+          <p id="successMessage" class="success-message" style="display: none;">Settings saved successfully!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="scripts/user.js"></script>
+</body>
+</html>
