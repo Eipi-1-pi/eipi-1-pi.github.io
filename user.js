@@ -4,7 +4,7 @@ let salesOptions = [];
 let multipliers = [];
 let selectedMultiplier = null;
 
-const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec'; // Replace with your GAS Web App URL
+const GAS_WEB_APP_URL = 'https://script.google.com/a/macros/gl.ck.tp.edu.tw/s/AKfycbzKKD_5oypZUjyhGHF9JK7N8zXNLd4WLANKgGm5kfq-e2P5RfV3HeJqwIvkXqftW2r8/exec'; // Replace with your GAS Web App URL
 
 /**
  * Initializes the UI by fetching sales options from the server.
